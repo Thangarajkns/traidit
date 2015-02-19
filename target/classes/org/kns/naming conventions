@@ -1,0 +1,13 @@
+1. All URLs should be of form *.htm
+2. only lower cases are allowed in urls.
+3. All Classes Should be Commented with Date, Author, Purpose and Shoud follow Java Conventions
+4. All Methods Should follow, Creation Date Author, Purpose, Logical Steps if any, List of Modifications and modifier
+5  USER ROLES :
+                ROLE_SUPERADMIN
+                ROLE_ORGANIZATION_ADMIN
+                ROLE_ORGANIZATION_MASTER
+                ROLE_USER
+                
+6. The system wont have Anonymous Users+
+7. Intial Module Divisions is User, Organization, Project, Budget, Tasks, TimeCard, Vacation
+8. All Time Card Related Activities like Organization,Project,Tasks,Budget etc will be under timecard package

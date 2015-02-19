@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="todayPaymentsReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" lineSpacing="Single"/>
+	<style name="heading" lineSpacing="Single"/>
+	<style name="Zebra" lineSpacing="Single">
+		<box topPadding="2" bottomPadding="0"/>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() % 2 == 0)]]></conditionExpression>
+			<style mode="Opaque" backcolor="#E0E0E0" lineSpacing="Single" isBlankWhenNull="true" fontName="Serif"/>
+		</conditionalStyle>
+	</style>
+	<field name="userName" class="java.lang.String"/>
+	<field name="plans.planName" class="java.lang.String"/>
+	<field name="plans.price" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<image isLazy="true">
+				<reportElement x="0" y="0" width="139" height="76"/>
+				<imageExpression class="java.lang.String"><![CDATA["logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="265" y="45" width="274" height="21" forecolor="#FF9933"/>
+				<textElement textAlignment="Right" lineSpacing="Single">
+					<font fontName="SansSerif" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Trade anything and become an Entrepreneur…]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="116" y="76" width="329" height="20" forecolor="#174C71" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" lineSpacing="Single">
+					<font fontName="Serif" size="14" isBold="true" isItalic="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Users Payment Report]]></text>
+			</staticText>
+			<line>
+				<reportElement x="17" y="96" width="528" height="1"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="209" y="11" width="125" height="24"/>
+				<textElement textAlignment="Right" lineSpacing="Single">
+					<font fontName="SansSerif" size="10" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Users Payment Dues]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<frame>
+				<reportElement style="heading" mode="Opaque" x="7" y="0" width="548" height="30" backcolor="#8C8C89"/>
+				<staticText>
+					<reportElement style="heading" mode="Opaque" x="20" y="8" width="75" height="20" forecolor="#FFFFCC" backcolor="#8C8C89"/>
+					<textElement textAlignment="Center" lineSpacing="Single">
+						<font fontName="Serif" size="10"/>
+					</textElement>
+					<text><![CDATA[User Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="heading" mode="Opaque" x="226" y="8" width="75" height="20" forecolor="#FFFFCC" backcolor="#8C8C89"/>
+					<textElement textAlignment="Center" lineSpacing="Single">
+						<font fontName="Serif" size="10"/>
+					</textElement>
+					<text><![CDATA[Plan Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="heading" mode="Opaque" x="432" y="8" width="75" height="20" forecolor="#FFFFCC" backcolor="#8C8C89"/>
+					<textElement textAlignment="Center" lineSpacing="Single">
+						<font fontName="Serif" size="10"/>
+					</textElement>
+					<text><![CDATA[Plan Price]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<frame>
+				<reportElement style="Zebra" x="9" y="0" width="546" height="25"/>
+				<box topPadding="0" bottomPadding="0"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="30" y="2" width="100" height="20"/>
+					<box topPadding="0" bottomPadding="0"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" lineSpacing="Single">
+						<font fontName="Serif" size="9" isItalic="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{userName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="237" y="2" width="100" height="20"/>
+					<box topPadding="0" bottomPadding="0"/>
+					<textElement verticalAlignment="Middle" lineSpacing="Single">
+						<font fontName="Serif" size="9" isStrikeThrough="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{plans.planName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="446" y="2" width="100" height="20"/>
+					<textElement verticalAlignment="Middle" lineSpacing="Single">
+						<font fontName="Serif" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Double"><![CDATA[$F{plans.price}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="118" splitType="Stretch">
+			<line>
+				<reportElement x="37" y="31" width="497" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="27" y="43" width="523" height="32"/>
+				<textElement textAlignment="Justified" lineSpacing="Single">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<text><![CDATA[This document contains proprietary and confidential information of TraidIT and shall not be used, disclosed or reproduced, in whole or in part, for any purpose other than to benefit  TraidIT.This document and all the information contained herein remains the property of  TraidIT.Any violation will subject to the fullest extent of the law.  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="191" y="88" width="166" height="20"/>
+				<textElement lineSpacing="Single">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<text><![CDATA[Copyright 2015. All rights reserved.]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="FixRelativeToBottom" x="425" y="88" width="80" height="20"/>
+				<textElement textAlignment="Right" lineSpacing="Single">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement positionType="FixRelativeToBottom" x="505" y="88" width="40" height="20"/>
+				<textElement lineSpacing="Single">
+					<font fontName="Serif" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

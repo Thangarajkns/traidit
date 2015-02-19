@@ -1,0 +1,11 @@
+
+Dear ${commission.benificiary.firstName} ${commission.benificiary.lastName},
+ 
+
+       You have missed your Juice of ${commission.commissionAmount} $ from ${commission.payer.firstName} ${commission.payer.lastName}, one among you referred, has been missed as because your profile has been inactive mode.
+       Please renew your plan immediately to not to miss your juice.
+
+ 
+  Regards,
+  Traidit
+
