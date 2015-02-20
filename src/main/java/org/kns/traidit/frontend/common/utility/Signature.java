@@ -25,9 +25,9 @@ public class Signature {
 	  private static final String REQUEST_URI = "/onca/xml";
 	  private static final String REQUEST_METHOD = "GET";
 
-	  private String endpoint = "ecs.amazonaws.com"; // must be lowercase
-	  private String awsAccessKeyId = "AKIAI3ZEVDR5SYQE77ZQ";
-	  private String awsSecretKey = "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";
+	  private String endpoint = ""; // must be lowercase
+	  private String awsAccessKeyId = "";
+	  private String awsSecretKey = "";
 
 	  private SecretKeySpec secretKeySpec = null;
 	  private Mac mac = null;
